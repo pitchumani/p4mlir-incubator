@@ -507,7 +507,7 @@ def HeaderType : StructLikeType<"Header", "header"> {
     Represents a structure of name, value pairs.
     !p4hir.header<"name", fieldName1: Type1, fieldName2: Type2>
 
-    Special field named "__valid" of type !p4hir.validity.bit is used to
+    Special field named "$valid" of type !p4hir.validity.bit is used to
     represent validity bit
   }];
 
@@ -522,7 +522,7 @@ def HeaderType : StructLikeType<"Header", "header"> {
 
   // This adds more C++ stuff into parent extraClassDeclaration
   let extraClassDeclaration = commonClassDeclaration # [{
-    static constexpr llvm::StringRef validityBit = "__valid";
+    static constexpr llvm::StringRef validityBit = "$valid";
   }];
 }
 
